@@ -162,7 +162,7 @@ func processCommond(update *api.Update) {
 		}
 	case "list":
 		if checkAdmin(gid, *upmsg.From) {
-			rulelists := getRuleList(gid)
+			rulelists := getRuleListKey(gid)
 			msg.Text = "ID: " + strconv.FormatInt(gid, 10)
 			msg.ParseMode = "Markdown"
 			msg.DisableWebPagePreview = true

@@ -77,6 +77,17 @@ func getRuleList(gid int64) []string {
 	return strs
 }
 
+func getRuleListKey(gid int64) []string {
+	kvs := common.AllGroupRules[gid]
+	str := ""
+	var strs []string
+	for k, v := range kvs {
+		str += "`" + k + "`, "
+	}
+	strs = append(strs, str)
+	return strs
+}
+
 /**
  * 查询是否包含相应的自动回复规则
  */
