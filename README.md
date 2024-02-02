@@ -23,3 +23,6 @@
 MIT zu1k i@zu1k.com
 
 不提供任何机器人相关的咨询或其他服务，不要私聊我
+
+### 启动
+`docker run -itd -v /root/tg-keyword-reply-bot:/data  bot -t <token> -s <superuserid>`
