@@ -130,7 +130,7 @@ func processCommond(update *api.Update) {
 	gid := upmsg.Chat.ID
 	uid := upmsg.From.ID
 	msg = api.NewMessage(update.Message.Chat.ID, "")
-	_, _ = bot.DeleteMessage(api.NewDeleteMessage(update.Message.Chat.ID, upmsg.MessageID))
+	// _, _ = bot.DeleteMessage(api.NewDeleteMessage(update.Message.Chat.ID, upmsg.MessageID))
 	switch upmsg.Command() {
 	case "start", "help":
 		msg.Text = "本机器人能够自动回复特定关键词"
