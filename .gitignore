@@ -12,4 +12,4 @@
 *.out
 
 .idea/
-db/
+data.db
