@@ -23,7 +23,7 @@ type rule struct {
 
 // Init 数据库初始化，包括新建数据库（如果还没有建立），基本数据的读写
 func Init(newToken string) (token string) {
-	dbtmp, err := gorm.Open("sqlite3", "data.db")
+	dbtmp, err := gorm.Open("sqlite3", "/data/data.db")
 	if err != nil {
 		panic("failed to connect database")
 	}

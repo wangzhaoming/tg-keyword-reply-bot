@@ -81,7 +81,7 @@ func getRuleListKey(gid int64) []string {
 	kvs := common.AllGroupRules[gid]
 	str := ""
 	var strs []string
-	for k, v := range kvs {
+	for k, _ := range kvs {
 		str += "`" + k + "`, "
 	}
 	strs = append(strs, str)
