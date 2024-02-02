@@ -116,6 +116,12 @@ func processReply(update *api.Update) {
 		sendVideo(gid, replyText[6:])
 	} else if strings.HasPrefix(replyText, "file:") {
 		sendFile(gid, replyText[5:])
+	} else if strings.HasPrefix(replyText, "html:") {
+		msg = api.NewMessage(gid, replyText[5:])
+		msg.DisableWebPagePreview = true
+		msg.ReplyToMessageID = upmsg.MessageID
+		msg.ParseMode = "Html"
+		sendMessage(msg)
 	} else if replyText != "" {
 		msg = api.NewMessage(gid, replyText)
 		msg.DisableWebPagePreview = true
