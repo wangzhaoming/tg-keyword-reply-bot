@@ -126,7 +126,7 @@ func processReply(update *api.Update) {
 		msg = api.NewMessage(gid, replyText[9:])
 		msg.DisableWebPagePreview = true
 		msg.ReplyToMessageID = upmsg.MessageID
-		msg.ParseMode = "Markdown"
+		msg.ParseMode = "MarkdownV2"
 		sendMessage(msg)
 	} else if replyText != "" {
 		msg = api.NewMessage(gid, replyText)
