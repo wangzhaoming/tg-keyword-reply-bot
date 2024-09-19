@@ -100,7 +100,7 @@ func findKey(gid int64, input string) string {
 			if match {
 				return reply
 			}
-		} else if strings.Contains(input, keyword) {
+		} else if input==keyword {
 			return reply
 		}
 	}
