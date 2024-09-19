@@ -122,6 +122,12 @@ func processReply(update *api.Update) {
 		msg.ReplyToMessageID = upmsg.MessageID
 		msg.ParseMode = "Html"
 		sendMessage(msg)
+	} else if strings.HasPrefix(replyText, "markdown:") {
+		msg = api.NewMessage(gid, replyText[9:])
+		msg.DisableWebPagePreview = true
+		msg.ReplyToMessageID = upmsg.MessageID
+		msg.ParseMode = "Markdown"
+		sendMessage(msg)
 	} else if replyText != "" {
 		msg = api.NewMessage(gid, replyText)
 		msg.DisableWebPagePreview = true
