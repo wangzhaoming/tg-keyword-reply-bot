@@ -151,6 +151,7 @@ func processCommond(update *api.Update) {
 		if checkAdmin(gid, *upmsg.From) {
 			order := upmsg.CommandArguments()
 			if order != "" {
+				log.Print(order)
 				addRule(gid, order)
 				msg.Text = "规则添加成功: " + order
 			} else {
