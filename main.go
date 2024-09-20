@@ -20,12 +20,14 @@ var gcron *cron.Cron
 var (
 	debug       bool
 	superUserId int
+	apiKey      string
 )
 
 func main() {
 	botToken := flag.String("t", "", "your bot Token")
 	flag.IntVar(&superUserId, "s", 0, "super manager Id")
 	flag.BoolVar(&debug, "d", false, "debug mode")
+	flag.StringVar(&apiKey, "k", "", "groq api key")
 	flag.Parse()
 	token := db.Init(*botToken)
 	gcron = cron.New()
