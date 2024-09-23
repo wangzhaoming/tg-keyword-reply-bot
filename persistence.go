@@ -97,7 +97,7 @@ func findKey(gid int64, input string) string {
 	kvs := common.AllGroupRules[gid]
 	relate := ""
 	if strings.HasPrefix(input, "~") || strings.HasPrefix(input, "～") {
-		relate = relateKey(input[1:], getKeys(kvs))
+		relate = relateKey(strings.TrimLeft(input, "~～"), getKeys(kvs))
 	}
 	for keyword, reply := range kvs {
 		if strings.HasPrefix(keyword, "re:") {
