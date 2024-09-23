@@ -96,7 +96,7 @@ func getRuleListKey(gid int64) []string {
 func findKey(gid int64, input string) string {
 	kvs := common.AllGroupRules[gid]
 	relate := ""
-	if strings.HasPrefix(input, "~") {
+	if strings.HasPrefix(input, "~") || strings.HasPrefix(input, "～") {
 		relate = relateKey(input[1:], getKeys(kvs))
 	}
 	for keyword, reply := range kvs {
